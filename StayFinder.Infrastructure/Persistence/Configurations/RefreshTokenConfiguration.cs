@@ -12,6 +12,7 @@ public class RefreshTokenConfiguration : IEntityTypeConfiguration<RefreshToken>
         b.HasKey(x => x.Id);
 
         b.Property(x => x.TokenHash).IsRequired().HasMaxLength(256);
+        b.Property(x => x.ReplacedByTokenHash).HasMaxLength(256);
         b.HasIndex(x => x.TokenHash);
 
         b.HasOne(x => x.User)

@@ -9,6 +9,9 @@ public class RefreshToken
     public DateTime ExpiresAt { get; set; }
     public DateTime? RevokedAt { get; set; }
 
+    // Set when this token is rotated; reusing a revoked token signals theft
+    public string? ReplacedByTokenHash { get; set; }
+
     public bool IsActive => RevokedAt == null && ExpiresAt > DateTime.UtcNow;
 
     public User User { get; set; } = default!;

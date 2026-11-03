@@ -18,6 +18,9 @@ public class Listing
     public int Bedrooms { get; set; }
     public int Bathrooms { get; set; }
 
+    // ISO 4217 code (USD, UGX, SDG...). Prices and fees on this listing are in this currency.
+    public string Currency { get; set; } = "USD";
+
     public decimal PricePerNight { get; set; }
     public decimal CleaningFee { get; set; }
 

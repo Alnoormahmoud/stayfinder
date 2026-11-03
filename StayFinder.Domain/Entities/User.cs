@@ -10,6 +10,10 @@ public class User
     public string PasswordHash { get; set; } = default!;
     public string? PhoneNumber { get; set; }
     public UserRole Role { get; set; } = UserRole.Guest;
+
+    // Lets an admin disable an account without deleting it
+    public bool IsActive { get; set; } = true;
+
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     public ICollection<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
